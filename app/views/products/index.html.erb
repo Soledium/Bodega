@@ -1,0 +1,47 @@
+<%# <% <p style="color: green"><%= notice %></p> 
+<%# <h1>Products</h1>
+
+<div id="products">
+  <% @products.each do |product| %>
+    <%# <%= render product %>
+    <%# <p>
+      <%# <%= link_to "Show this product", product %>
+    <%# </p> %>
+  <%# <% end %>
+<%# </div> %>
+
+<%# <%= link_to "New product", new_product_path %> 
+
+<h1>Lista de Productos</h1>
+<a href=" <%= new_product_path %> " class="btn btn-dark btn-icon-split mb-3">
+  <span class="icon text-white-50">
+    <i class="fas fa-flag"></i>
+  </span>
+  <span class="text">Crear Producto
+  </span>
+</a>
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Referencia</th>
+      <th>Cantidad</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td> <%= product.id %> </td>
+      <td> <%= product.name %> </td>
+      <td> <%= product.reference %> </td>
+      <td> <%= 0 %> </td>
+      <td> <%= link_to "Detalles", product_path(product), class:"btn btn-dark" %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
